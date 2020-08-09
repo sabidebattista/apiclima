@@ -6,6 +6,7 @@ body {
     background-image: url(./APICLIMA.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 p{
     margin-left: 500px;
@@ -26,12 +27,17 @@ p{
     color: rgb(12, 84, 94);
     font-weight: bolder;
     animation: blinker 1s infinite;
-    margin-left: 120px
-    
+    margin-left: 80px 
+}
+#feels {
+    margin-left: 80px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
 }
 #humidity {
     color: white;
-    margin-left: 80px;
+    margin-left: 10px;
     font-weight: bold;
 }
 img { align-content: center;

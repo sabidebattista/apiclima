@@ -13,8 +13,9 @@
             .then( respuesta=>respuesta.json()) //Obtenemos una promesa que trataremos como json
             .then(datos=> { //obtenemos una nueva promesa, pero los datos ya están como json.
                 document.getElementById('ciudad').innerHTML= datos.name + ", " + datos.sys.country; //escribo los datos del país
-                document.getElementById('temp').innerHTML=(datos.main.temp -273.15).toFixed(1) + "º";//escribo la temperatura. la convierto de kelvin a celsius
-                document.getElementById('humidity').innerHTML= "Humedad: " + (datos.main.humidity) ; //escribo la humedad. 
+                document.getElementById('temp').innerHTML=(datos.main.temp -273.15).toFixed(0) + "º C";//escribo la temperatura. la convierto de kelvin a celsius
+                document.getElementById('feels').innerHTML= "ST " + (datos.main.feels_like -273.15).toFixed(1) + "º";//escribo la temperatura. la convierto de kelvin a celsius
+                document.getElementById('humidity').innerHTML= "Humedad: " + (datos.main.humidity) + "%"; //escribo la humedad. 
                 document.getElementById('imagen').src="http://openweathermap.org/img/wn/"+ datos.weather[0].icon +".png" //imagen
             })
             .catch( error => alert("Hubo un error: " + error));
@@ -25,7 +26,10 @@
         <span id="ciudad"></span><br>
         <span id="temp"> </span>
         <img id="imagen" src=""> <br>
+        <span id="feels"></span>
         <span id="humidity"></span>
+        <span id="descr"></span>
+
     </p>
 </body>
 </html>
